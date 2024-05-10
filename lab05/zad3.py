@@ -1,36 +1,3 @@
-# from os import makedirs, listdir
-# from random import seed, random
-# from shutil import copyfile
-#
-# import numpy as np
-# import matplotlib.pyplot as plt
-# import seaborn as sns
-# from keras.src.legacy.preprocessing.image import ImageDataGenerator
-# from matplotlib import pyplot
-# from tensorflow.keras.datasets import mnist
-# from tensorflow.keras.models import Sequential
-# from tensorflow.keras.layers import Dense, Conv2D, Flatten, MaxPooling2D
-# from tensorflow.keras.utils import to_categorical
-# from sklearn.metrics import confusion_matrix
-# from tensorflow.keras.callbacks import History
-# from keras.optimizers import SGD
-#
-# import sys
-# from matplotlib import pyplot
-# from keras.utils import to_categorical
-# from keras.models import Sequential
-# from keras.layers import Conv2D
-# from keras.layers import MaxPooling2D
-# from keras.layers import Dense
-# from keras.layers import Flatten
-# from keras.optimizers import SGD
-# # from keras.preprocessing.image import ImageDataGenerator
-# from tensorflow.keras.preprocessing.image import ImageDataGenerator
-# import tensorflow as tf
-#
-#
-#
-# # # plot dog photos from the dogs vs cats dataset
 # # from matplotlib import pyplot
 # # from matplotlib.image import imread
 # # # define location of dataset
@@ -185,6 +152,50 @@ test_dataset = tf.keras.utils.image_dataset_from_directory(
 	shuffle=True
 )
 
+# # Definicja katalogu
+# dataset_home = 'dataset_dogs_vs_cats/'
+
+# # Definicja parametrów augmentacji
+# data_augmentation = tf.keras.Sequential([
+#     tf.keras.layers.experimental.preprocessing.RandomFlip('horizontal'),
+#     tf.keras.layers.experimental.preprocessing.RandomRotation(0.2),
+#     tf.keras.layers.experimental.preprocessing.RandomZoom(0.2),
+# ])
+
+# Tworzenie tf.data.Dataset z augmentacją danych
+train_dataset = tf.keras.utils.image_dataset_from_directory(
+    dataset_home + 'train/',
+    labels='inferred',
+    label_mode='binary',  # For binary classification
+    image_size=(200, 200),
+    batch_size=64,
+    shuffle=True,
+    seed=123,  # Seed for shuffling
+    validation_split=0.2,  # Splitting training set for validation
+    subset='training',  # Selecting training subset
+    interpolation='bilinear'
+)
+
+# Zastosowanie augmentacji do zbioru treningowego
+# train_dataset_augmented = train_dataset.map(lambda x, y: (data_augmentation(x, training=True), y))
+
+# # Tworzenie zbioru walidacyjnego bez augmentacji
+# val_dataset = tf.keras.utils.image_dataset_from_directory(
+#     dataset_home + 'train/',
+#     labels='inferred',
+#     label_mode='binary',  # For binary classification
+#     image_size=(200, 200),
+#     batch_size=64,
+#     shuffle=True,
+#     seed=123,  # Seed for shuffling
+#     validation_split=0.2,  # Splitting training set for validation
+#     subset='validation',  # Selecting validation subset
+#     interpolation='bilinear'
+# )
+
+# # Normalizacja danych
+# train_dataset_augmented = train_dataset_augmented.map(lambda x, y: (x / 255.0, y))
+# val_dataset = val_dataset.map(lambda x, y: (x / 255.0, y))
 
 # Define and compile the model
 def define_model():
@@ -207,15 +218,15 @@ def define_model():
 	return model
 
 
-keras.applications.Xception(
-    include_top=True,
-    weights="imagenet",
-    input_tensor=None,
-    input_shape=None,
-    pooling=None,
-    classes=1000,
-    classifier_activation="softmax",
-)
+# keras.applications.Xception(
+#     include_top=True,
+#     weights="imagenet",
+#     input_tensor=None,
+#     input_shape=None,
+#     pooling=None,
+#     classes=1000,
+#     classifier_activation="softmax",
+# )
 
 
 # Define the model
@@ -223,9 +234,11 @@ model = define_model()
 
 # Train the model
 history = model.fit(train_dataset, validation_data=test_dataset, epochs=3)
+# history = model.fit(train_dataset_augmented, validation_data=val_dataset, epochs=3)
 
 # Evaluate the model
 _, acc = model.evaluate(test_dataset)
+# _, acc = model.evaluate(val_dataset)
 print('> %.3f' % (acc * 100.0))
 
 
