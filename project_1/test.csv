@@ -1,4 +1,20 @@
+myTank.x,myTank.y,myTank.rotation,myTank.cannonRotation,myTank.velocityX,myTank.velocityY,myTank.accelerationX,myTank.accelerationY,myTank.shootCooldown,myTank.controls.turnLeft,myTank.controls.turnRight,myTank.controls.goForward,myTank.controls.goBack,myTank.controls.shoot,myTank.controls.cannonLeft,myTank.controls.cannonRight,myBullet1.x,myBullet1.y,myBullet1.velocityX,myBullet1.velocityY,myBullet2.x,myBullet2.y,myBullet2.velocityX,myBullet2.velocityY,myBullet3.x,myBullet3.y,myBullet3.velocityX,myBullet3.velocityY,enemyTank.x,enemyTank.y,enemyTank.rotation,enemyTank.cannonRotation,enemyTank.velocityX,enemyTank.velocityY,enemyTank.accelerationX,enemyTank.accelerationY,enemyTank.shootCooldown,enemyBullet1.x,enemyBullet1.y,enemyBullet1.velocityX,enemyBullet1.velocityY,enemyBullet2.x,enemyBullet2.y,enemyBullet2.velocityX,enemyBullet2.velocityY,enemyBullet3.x,enemyBullet3.y,enemyBullet3.velocityX,enemyBullet3.velocityY,currentGameTime
+450,210,180,180,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,50,290,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,5
+450,210,180,180,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,50.047,290.001,1.5,0,0.047,0.001,0.05,0.001,99,0,0,0,0,0,0,0,0,0,0,0,0,13
+450,210,180,180,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,50.14,290.005,3,0,0.093,0.004,0.05,0.003,98,73.5,290,2.5,0,0,0,0,0,0,0,0,0,21
+450,210,180,180,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,50.275,290.012,4.5,0,0.135,0.007,0.05,0.004,97,76,290,2.5,0,0,0,0,0,0,0,0,0,30
+450,210,180,180,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,50.451,290.024,6,0,0.176,0.012,0.05,0.005,96,78.5,290,2.5,0,0,0,0,0,0,0,0,0,39
+450,210,180,180,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,50.665,290.041,7.5,0,0.214,0.017,0.05,0.007,95,81,290,2.5,0,0,0,0,0,0,0,0,0,47
+450,210,180,180,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,50.915,290.065,9,0,0.25,0.024,0.049,0.008,94,83.5,290,2.5,0,0,0,0,0,0,0,0,0,55
+450,210,180,180,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,51.2,290.097,10.5,0,0.284,0.031,0.049,0.009,93,86,290,2.5,0,0,0,0,0,0,0,0,0,63
+450,210,180,180,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,51.517,290.137,12,0,0.317,0.04,0.049,0.01,92,88.5,290,2.5,0,0,0,0,0,0,0,0,0,71
 
-Kolumna1,Kolumna2,Kolumna3
-Wartość1,Wartość2,Wartość3
-Wartość4,Wartość5,Wartość6
+0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49
+
+Zbiór zrobiony na potrzeby wizualizacji danych (nie jest używany jako dataset)
+0myTank.x,1myTank.y,2myTank.rotation,3myTank.cannonRotation,4myTank.velocityX,5myTank.velocityY,6myTank.accelerationX,7myTank.accelerationY,8myTank.shootCooldown,9myTank.controls.turnLeft,10myTank.controls.turnRight,11myTank.controls.goForward,12myTank.controls.goBack,13myTank.controls.shoot,14myTank.controls.cannonLeft,15myTank.controls.cannonRight,16myBullet1.x,17myBullet1.y,18myBullet1.velocityX,19myBullet1.velocityY,20myBullet2.x,21myBullet2.y,22myBullet2.velocityX,23myBullet2.velocityY,24myBullet3.x,25myBullet3.y,26myBullet3.velocityX,27myBullet3.velocityY,28enemyTank.x,29enemyTank.y,30enemyTank.rotation,31enemyTank.cannonRotation,32enemyTank.velocityX,33enemyTank.velocityY,34enemyTank.accelerationX,35enemyTank.accelerationY,36enemyTank.shootCooldown,37enemyBullet1.x,38enemyBullet1.y,39enemyBullet1.velocityX,40enemyBullet1.velocityY,41enemyBullet2.x,42enemyBullet2.y,43enemyBullet2.velocityX,44enemyBullet2.velocityY,45enemyBullet3.x,46enemyBullet3.y,47enemyBullet3.velocityX,48enemyBullet3.velocityY,49currentGameTime
+0myTank.x,1myTank.y,2myTank.rotation,8myTank.shootCooldown,9myTank.controls.turnLeft,10myTank.controls.turnRight,11myTank.controls.goForward,12myTank.controls.goBack,13myTank.controls.shoot,16myBullet1.x,17myBullet1.y,28enemyTank.x,29enemyTank.y,30enemyTank.rotation,36enemyTank.shootCooldown,37enemyBullet1.x,38enemyBullet1.y,41enemyBullet2.x,42enemyBullet2.y,49currentGameTime
+3,4,5,6,7,14,15,18-27,31-35,39-48
+
+enemyTank.x - 28
+enemyTank.y - 29
