@@ -9,14 +9,7 @@ fs.appendFile(
 	}
 );
 ```
-Witam
-
-
-
-
-
-
-Zapraszam na niezapomnianą podróż w głąb projektu o czołgach, bytach bardzo opornych
+Witam i zapraszam na niezapomnianą podróż w głąb projektu o czołgach, bytach bardzo opornych
 na naukę.
 
 ## Trudne początki
@@ -115,3 +108,21 @@ Brak mu tylko wag, które musieliśmy stworzyć sami w pythonie (a raczej nasz c
 ### Zaczyna on konkurować z własnym dziełem, uważając, że jest lepszy od niego...
 
 I w taki oto sposób, sam stworzyłem własny skrypt, który miał za zadanie "zmierzyć" się z siecią neuronową.
+
+
+## Podejściem które też postanowiłem przetestować było drzewo decyzyjne. Zapewnia ono dużo większą przejrzystość
+i zrozumienie dla człowieka.  Efekty takiego drzewa były różne, w zależności od tego co model uznawał za przydatne.
+
+# Podsumowanie
+
+Projekt okazał się bardzo trudny niż początkowo zakładałem. Nieraz był bardzo demotywujący przez brak znacznych
+postępów które okazywały się po prostu nie do przejścia. 
+
+Niestety nie udało się nauczyć czołgów przy pomocy Reinforcement Learningu, ponieważ gra nie została do tego 
+przystosowana pod względem technologicznym i wymagałoby to zbyt dużo czasu na douczenie się jak to zrobić.
+Jedynie teoretycznie mogę powiedzieć, że jedną z odpowiednich ścieżek byłoby napisanie gry na nowo oraz
+stworzenie jej w formie gyma, co pozwoliłoby na uruchamianie jej w formie środowiska do uczenia maszynowego.
+Wykorzystalibyśmy wtedy Q-learning, który jest jednym z najprostszych algorytmów uczenia maszynowego.
+Innym sposobem byłoby przystosowanie modelu do gry w czasie rzeczywistym poprzez nauczenie go wciskania
+klawiszy WASD i grania w "trybie gracza". Niestety, po konsultacjach z prowadzącym wykład doszliśmy do wniosku,
+że przez wyżej wymienione przeszkody, nie jest możliwe zrealizowanie projektu w czasie trwania semestru.
