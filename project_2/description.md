@@ -93,3 +93,7 @@ rule3 = ctrl.Rule(player_sum['medium'] & dealer_card['medium'], action['hit'])
 rule4 = ctrl.Rule(player_sum['medium'] & dealer_card['high'], action['hit'])
 rule5 = ctrl.Rule(player_sum['high'], action['stick'])
 ```
+
+## Algorytm Genetyczny
+
+Ostatnim krokiem było zastosowanie algorytmu genetycznego, który pozwolił na

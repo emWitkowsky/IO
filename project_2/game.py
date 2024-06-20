@@ -6,7 +6,7 @@ env = gym.make("Blackjack-v1", natural=True, sab=False)
 
 observation, _ = env.reset()
 
-# info about the game
+# Parameters of the game
 games_to_play = 100
 play = True
 results = {}

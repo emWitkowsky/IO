@@ -3,13 +3,18 @@ import numpy as np
 import skfuzzy as fuzz
 from skfuzzy import control as ctrl
 
-# Tworzymy środowisko gry w Blackjacka
+# We create the environment for the game
+# natural = True means that the game will be played with the natural blackjack rules
+# sab = False means that the game will be played with a single deck
 env = gym.make('Blackjack-v1', natural=True, sab=False)
 
-# Definiujemy zmienne lingwistyczne
-# player_sum - suma kart gracza
-# dealer_card - wartość karty krupiera
-# action - akcja gracza (czy ma dobrać kartę czy nie)
+# Parameters of game
+games_to_play = 100
+
+# We define the input and output variables
+# player_sum - player's hand value
+# dealer_card - value of the dealer's face-up card
+# action - player's action (stick or hit)
 player_sum = ctrl.Antecedent(np.arange(0, 32, 1), 'player_sum')
 dealer_card = ctrl.Antecedent(np.arange(0, 11, 1), 'dealer_card')
 action = ctrl.Consequent(np.arange(0, 2, 1), 'action')
@@ -76,7 +81,7 @@ import matplotlib.pyplot as plt
 results = {}
 
 # Play 100 games
-for _ in range(100):
+for _ in range(games_to_play):
     observation, _ = env.reset()
     done = False
     while not done:
