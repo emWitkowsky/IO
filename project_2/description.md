@@ -137,3 +137,10 @@ Algorytm genetyczny 52% wygranych
 Uczenie przez wzmacnianie 41% wygranych
 Kontroler rozmyty daje nam 23% wygranych
 Mój skrypt całe 5% wygranych
+
+
+### Pomocne źródła
+
+ChatGPT
+Artykuł Medium na temat Reinforcement Learningu
+Publiczne repozytoria na GitHubie
