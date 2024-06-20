@@ -2,6 +2,7 @@ import gym
 import numpy as np
 import skfuzzy as fuzz
 from skfuzzy import control as ctrl
+import matplotlib.pyplot as plt
 
 # We create the environment for the game
 # natural = True means that the game will be played with the natural blackjack rules
@@ -18,6 +19,10 @@ games_to_play = 100
 player_sum = ctrl.Antecedent(np.arange(0, 32, 1), 'player_sum')
 dealer_card = ctrl.Antecedent(np.arange(0, 11, 1), 'dealer_card')
 action = ctrl.Consequent(np.arange(0, 2, 1), 'action')
+
+usable_ace = ctrl.Antecedent(np.arange(2), 'usable_ace')
+usable_ace['no'] = fuzz.trimf(usable_ace.universe, [0, 0, 0])
+usable_ace['yes'] = fuzz.trimf(usable_ace.universe, [1, 1, 1])
 
 # We define the membership functions for each variable
 # setting the sets for every point so that the fuzzy system can work on them
@@ -60,25 +65,11 @@ def get_action(player_sum_input, dealer_card_input):
     action_sim.input['dealer_card'] = dealer_card_input
     action_sim.compute()
     return action_sim.output['action']
-#
-# # Play the game
-# observation = env.reset()
-# done = False
-# while not done:
-#     player_sum, dealer_card, usable_ace = observation
-#     action = get_action(player_sum, dealer_card)
-#     action = 0 if action < 0.5 else 1  # Convert to 0 or 1
-#     observation, reward, done, info = env.step(action)
-#     if done:
-#         print("Game finished. Reward: ", reward)
-#         observation = env.reset()
-#
-# env.close()
-
-import matplotlib.pyplot as plt
 
 # Initialize a dictionary to store the results
 results = {}
+wins = 0
+losses = 0
 
 # Play 100 games
 for _ in range(games_to_play):
@@ -97,11 +88,20 @@ for _ in range(games_to_play):
                 results[reward] = 1
             observation, _ = env.reset()
 
+        if (reward >= 1):
+            wins += 1
+        else:
+            losses += 1
+        break
 
 env.close()
 
+print("Wins: ", wins)
+print("Losses: ", losses)
+print(f"Win percentage: ", wins / games_to_play * 100, "%" )
+
+
 # Plot the results
-# plt.bar(results.keys(), results.values(), tick_label=['Loss', 'Draw', 'Win'])
 plt.bar(results.keys(), results.values())
 plt.xlabel('Game Result')
 plt.ylabel('Number of Games')

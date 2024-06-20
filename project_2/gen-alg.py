@@ -24,6 +24,7 @@ initial_population = np.random.choice([0, 1], size=(num_parents_mating, num_stat
 
 def fitness_func(ga_instance, solution, solution_idx):
     total_reward = 0
+    win_count = 0
     # print("Generation: ", ga_instance.generations_completed, "Solution: ", solution, "Fitness: ", solution_fitness)
     # print(ga_instance.generations_completed, "Solution: ", solution, "Fitness: ", solution_fitness)
     for _ in range(100):  # Evaluate strategy over 100 games
@@ -47,11 +48,20 @@ def fitness_func(ga_instance, solution, solution_idx):
             # Unpack the step result into five variables
             state, reward, done, usable_ace, info = step_result
             total_reward += reward
-    return total_reward
+            if reward == 1:
+                win_count += 1
+    return total_reward, win_count
 
 best_fitness = []
+# def on_generation(ga_instance):
+#     best_fitness.append(ga_instance.best_solution()[1])
+
 def on_generation(ga_instance):
-    best_fitness.append(ga_instance.best_solution()[1])
+    solution, solution_fitness, solution_idx = ga_instance.best_solution()
+    total_reward, num_wins = solution_fitness
+    win_percentage = num_wins / 100 * 100  # Calculate the win percentage
+    print(f"Generation: {ga_instance.generations_completed}, Win Percentage: {win_percentage}%")
+    best_fitness.append(total_reward)
 
 game_by_ga_instance = pygad.GA(num_generations=num_generations,
                        num_parents_mating=num_parents_mating,

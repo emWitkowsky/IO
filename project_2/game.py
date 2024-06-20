@@ -10,6 +10,8 @@ observation, _ = env.reset()
 games_to_play = 100
 play = True
 results = {}
+wins = 0
+losses = 0
 
 while play:
     print("Player's sum: ", observation)
@@ -26,7 +28,9 @@ while play:
         # time.sleep(1)
         observation, _ = env.reset()
         if (reward > 1):
-            play = False
+            wins += 1
+        else:
+            losses += 1
 
         # adding our results to the dictionary
         if reward in results:
@@ -39,6 +43,10 @@ while play:
             play = False
 
 env.close()
+
+print("Wins: ", wins)
+print("Losses: ", losses)
+print(f"Win percentage: ", wins / games_to_play * 100, "%")
 
 # Plot the results
 plt.bar(results.keys(), results.values())

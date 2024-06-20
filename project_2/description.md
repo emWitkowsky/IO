@@ -96,4 +96,44 @@ rule5 = ctrl.Rule(player_sum['high'], action['stick'])
 
 ## Algorytm Genetyczny
 
+```python
+def on_generation(ga_instance):
+    best_fitness.append(ga_instance.best_solution()[1])
+
+game_by_ga_instance = pygad.GA(num_generations=num_generations,
+                       num_parents_mating=num_parents_mating,
+                       fitness_func=fitness_func,
+                       sol_per_pop=num_parents_mating,
+                       num_genes=num_states,
+                       init_range_low=0,
+                       init_range_high=1,
+                       parent_selection_type="sss",
+                       keep_parents=1,
+                       crossover_type="single_point",
+                       mutation_type="random",
+                       mutation_percent_genes=10,
+                       initial_population=initial_population,
+                       on_generation=on_generation)
+
+game_by_ga_instance.run()
+```
+
+
 Ostatnim krokiem było zastosowanie algorytmu genetycznego, który pozwolił na
+
+
+
+## Ostatni krok
+
+Posiadając już wszystkie algorytmy, które pozwoliły na uczenie się agenta w grze w Blackjacka,
+jedyne co zostało do zrobienia to zabawa parametrami, takimi jak ilość epizodów, ilość generacji,
+wielkość populacji, współczynnik mutacji, współczynnik krzyżowania, współczynnik uczenia, współczynnik dyskontowania
+oraz inne parametry, które pozwoliły na uzyskanie jak najlepszych wyników. Następnie porównywałem te
+algorytmy między soba by zobaczyć, który z nich osiąga najlepsze wyniki.
+
+Najlepiej wyszkolony został algorytm genetyczny
+
+Algorytm genetyczny 52% wygranych
+Uczenie przez wzmacnianie 41% wygranych
+Kontroler rozmyty daje nam 23% wygranych
+Mój skrypt całe 5% wygranych
