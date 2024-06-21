@@ -37,7 +37,7 @@ które sprawiłyby, że plik nie nadaje się do użycia jako dataset w formacie 
 ## Mamy dataset! To koniec problemów, prawda? PRAWDA!?
 
 Otóż nie do końca. Dataset zrobiony, ale przecież nieużyty, czyż nie? Więc trzeba stworzyć program który
-ładnie nam pokieruje czołgiem
+ładnie nam pokieruje czołgiem.
 
 ## Trudne małżeństwo Javascriptu i Pythona, czyli podejście do problemu z użyciem sieci neuronowych.
 
@@ -49,6 +49,8 @@ przerabiamy usuwając wszystkie niepotrzebne kolumny, a następnie trenujemy sie
 Możemy zapisywać wszystkie nasze wartościowe rzeczy do osobnego pliku z którego następnie będziemy mogli
 wygodnie przenosić do javascripta. Ale czego tak naprawdę potrzebujemy? Wag oraz biasów.
 
+Stworzyliśmy więc program, który będzie zapisywał wagi oraz biasy w oddzielnym pliku a my ręcznie będziemy z tego pliku
+ekstraktować wszystko co nam potrzebne i przeklejać do naszego skryptu w javascript.
 
 ```js
 function(e) {
@@ -115,6 +117,10 @@ i zrozumienie dla człowieka.  Efekty takiego drzewa były różne, w zależnoś
 
 # Podsumowanie
 
+<p align="center">
+  <img src="https://usagif.com/wp-content/uploads/gifs/white-flag-gif-21.gif" alt="Alt Text">
+</p>
+
 Projekt okazał się bardzo trudny niż początkowo zakładałem. Nieraz był bardzo demotywujący przez brak znacznych
 postępów które okazywały się po prostu nie do przejścia. 
 
@@ -126,3 +132,7 @@ Wykorzystalibyśmy wtedy Q-learning, który jest jednym z najprostszych algorytm
 Innym sposobem byłoby przystosowanie modelu do gry w czasie rzeczywistym poprzez nauczenie go wciskania
 klawiszy WASD i grania w "trybie gracza". Niestety, po konsultacjach z prowadzącym wykład doszliśmy do wniosku,
 że przez wyżej wymienione przeszkody, nie jest możliwe zrealizowanie projektu w czasie trwania semestru.
+
+Tak więc z góry chciałbym przeprosić za to, że nie udało mi się zrealizować drugiej części projektu w praktyce,
+niestety muszę przyznać, że mój obecny stan wiedzy z zakresu uczenia maszynowego nie pozwolił mi na sukces.
+Jeszcze raz przepraszam za zamieszanie i liczę na pozytywne rozpatrzenie dotychczasowych dokonań.

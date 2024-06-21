@@ -17,5 +17,6 @@ function(e) {
     if(me.shootCooldown == 0) {
         response.shoot = 1;
     }
+
     self.postMessage(response);
 }
