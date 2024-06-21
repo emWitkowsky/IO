@@ -10,6 +10,10 @@ Gracz ma możliwość dobierania kart, aż do momentu, w którym zdecyduje się 
 Krupier natomiast musi dobrać kartę jeśli suma jego punktów jest mniejsza niż 17.
 Wygrywa ten kto jest bliżej 21 punktów, ale nie przekroczył tej liczby.
 
+<p align="center">
+  <img src="https://gymnasium.farama.org/_images/blackjack1.gif" alt="Alt Text">
+</p>
+
 ## Własny skrypt
 
 ```python3
@@ -67,11 +71,6 @@ uczy się, które akcje są dla niego korzystne i kończą się wygraną, a któ
 
 ## Kontroler Rozmyty
 
-Tworząc kontroler rozmyty, zdefiniowałem reguły gry, którymi kieruje się agent.
-Reguły te są oparte na zasadach gry w Blackjacka, a także na moich własnych przemyśleniach.
-Kontroler rozmyty to nic innego jak zestaw instrukcji, którymi program operuje i na ich podstawie
-opiera decyzje. W moim przypadku, kontroler rozmyty działa na zasadzie "jeśli to, to tamto".
-
 ```python
 # We define the membership functions for each variable
 # setting the sets for every point so that the fuzzy system can work on them
@@ -93,6 +92,11 @@ rule3 = ctrl.Rule(player_sum['medium'] & dealer_card['medium'], action['hit'])
 rule4 = ctrl.Rule(player_sum['medium'] & dealer_card['high'], action['hit'])
 rule5 = ctrl.Rule(player_sum['high'], action['stick'])
 ```
+
+Tworząc kontroler rozmyty, zdefiniowałem reguły gry, którymi kieruje się agent.
+Reguły te są oparte na zasadach gry w Blackjacka, a także na moich własnych przemyśleniach.
+Kontroler rozmyty to nic innego jak zestaw instrukcji, którymi program operuje i na ich podstawie
+opiera decyzje. W moim przypadku, kontroler rozmyty działa na zasadzie "jeśli to, to tamto".
 
 ## Algorytm Genetyczny
 
@@ -119,9 +123,10 @@ game_by_ga_instance.run()
 ```
 
 
-Ostatnim krokiem było zastosowanie algorytmu genetycznego, który pozwolił na
-
-
+Ostatnim krokiem było zastosowanie algorytmu genetycznego, który pozwolił na trenowanie
+agentów w grze w Blackjacka. Algorytm genetyczny działa na zasadzie ewolucji, gdzie
+najlepsze osobniki są wybierane do kolejnej generacji, a te gorsze są eliminowane (okrutne!).
+W ten sposób, agent uczy się, które akcje są dla niego korzystne, a które nie.
 
 ## Ostatni krok
 
@@ -138,6 +143,7 @@ Uczenie przez wzmacnianie 41% wygranych
 Kontroler rozmyty daje nam 23% wygranych
 Mój skrypt całe 5% wygranych
 
+Jak możemy zauważyć, ewolucja zawsze wygrywa!
 
 ### Pomocne źródła
 
