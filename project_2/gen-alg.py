@@ -7,7 +7,7 @@ from matplotlib import pyplot as plt
 env = gym.make('Blackjack-v1')
 
 # Genetic Algorithm params
-num_generations = 500 # Nothing really changes after 50 generations, except the time we waste
+num_generations = 500 # Nothing really changes after 500 generations, except the time we waste
 # or maybe it does
 num_parents_mating = 100
 
